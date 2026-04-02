@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile | Freelance Application Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-sidebar">
+        <div class="brand-mark small">F</div>
+        <div>
+          <h2>Freelance App</h2>
+          <p>Work, manage, connect.</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="applications.html" class="nav-link">Applications</a>
+        <a href="chat.html" class="nav-link">Chat</a>
+        <a href="notifications.html" class="nav-link">Notifications</a>
+        <a href="profile.html" class="nav-link active">Profile</a>
+        <a href="admin.html" class="nav-link role-admin">Admin Panel</a>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <header class="topbar">
+        <button class="icon-btn sidebar-toggle" id="sidebarToggle">☰</button>
+        <div class="topbar-title"><h1>Profile</h1></div>
+        <div class="topbar-actions">
+          <div class="user-chip" id="userChip"></div>
+          <button class="btn btn-secondary" id="logoutButton">Logout</button>
+        </div>
+      </header>
+      <section class="content-section profile-grid">
+        <div class="card profile-card">
+          <div class="profile-avatar-stack">
+            <img id="profilePhoto" class="profile-photo" alt="" width="100" height="100" />
+            <div id="profileAvatarLetter" class="profile-avatar">A</div>
+          </div>
+          <h2 id="profileName">User Name</h2>
+          <p id="profileRole">Role</p>
+          <p id="profileEmail">email@example.com</p>
+          <div class="profile-photo-actions">
+            <input type="file" id="profilePictureInput" accept="image/jpeg,image/png,image/gif,image/webp" hidden />
+            <button type="button" class="btn btn-secondary" id="profilePictureUploadBtn">Add or change photo</button>
+            <p class="muted-hint">JPEG, PNG, GIF, or WebP · max 3 MB</p>
+          </div>
+        </div>
+        <div class="card profile-edit-card">
+          <h2>Edit profile</h2>
+          <form id="profileForm">
+            <div class="form-group">
+              <label for="profileNameInput">Full Name</label>
+              <input type="text" id="profileNameInput" required />
+            </div>
+            <div class="form-group">
+              <label for="profileEmailInput">Email</label>
+              <input type="email" id="profileEmailInput" required />
+            </div>
+            <div class="form-group">
+              <label for="profileAbout">About</label>
+              <textarea id="profileAbout" rows="4"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Save Changes</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>

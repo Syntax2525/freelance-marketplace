@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel | Freelance Application Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-sidebar">
+        <div class="brand-mark small">F</div>
+        <div>
+          <h2>Freelance App</h2>
+          <p>Work, manage, connect.</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="applications.html" class="nav-link">Applications</a>
+        <a href="chat.html" class="nav-link">Chat</a>
+        <a href="notifications.html" class="nav-link">Notifications</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="admin.html" class="nav-link active role-admin">Admin Panel</a>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <header class="topbar">
+        <button class="icon-btn sidebar-toggle" id="sidebarToggle">☰</button>
+        <div class="topbar-title"><h1>Admin Panel</h1></div>
+        <div class="topbar-actions">
+          <div class="user-chip" id="userChip"></div>
+          <button class="btn btn-secondary" id="logoutButton">Logout</button>
+        </div>
+      </header>
+      <section class="dashboard-grid admin-grid">
+        <div class="card stats-card">
+          <h3>Total Users</h3>
+          <p class="stat-number" id="adminUsersCount">0</p>
+        </div>
+        <div class="card stats-card">
+          <h3>Active Jobs</h3>
+          <p class="stat-number" id="adminJobsCount">0</p>
+        </div>
+        <div class="card stats-card">
+          <h3>Pending Reports</h3>
+          <p class="stat-number" id="adminReportsCount">0</p>
+        </div>
+      </section>
+      <section class="content-section admin-section">
+        <div class="section-header"><h2>Manage users</h2></div>
+        <div class="admin-table card">
+          <div class="table-headings">
+            <span>Name</span>
+            <span>Email</span>
+            <span>Role</span>
+            <span>Status</span>
+          </div>
+          <div id="adminUsersList"></div>
+        </div>
+      </section>
+      <section class="content-section admin-section">
+        <div class="section-header"><h2>Moderate jobs</h2></div>
+        <div class="admin-table card">
+          <div class="table-headings">
+            <span>Job</span>
+            <span>Client</span>
+            <span>Category</span>
+            <span>Action</span>
+          </div>
+          <div id="adminJobsList"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+</body>
+</html>

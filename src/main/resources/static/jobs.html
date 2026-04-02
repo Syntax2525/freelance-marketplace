@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobs | Freelance Application Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/jobs.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-sidebar">
+        <div class="brand-mark small">F</div>
+        <div>
+          <h2>Freelance App</h2>
+          <p>Work, manage, connect.</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="jobs.html" class="nav-link active">Jobs</a>
+        <a href="applications.html" class="nav-link">Applications</a>
+        <a href="chat.html" class="nav-link">Chat</a>
+        <a href="notifications.html" class="nav-link">Notifications</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="admin.html" class="nav-link role-admin">Admin Panel</a>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <header class="topbar">
+        <button class="icon-btn sidebar-toggle" id="sidebarToggle">☰</button>
+        <div class="topbar-title"><h1>Jobs</h1></div>
+        <div class="topbar-actions">
+          <div class="user-chip" id="userChip"></div>
+          <button class="btn btn-secondary" id="logoutButton">Logout</button>
+        </div>
+      </header>
+      <section class="content-section">
+        <div class="section-header">
+          <div>
+            <h2>Discover opportunities</h2>
+            <p>Search, filter and apply for jobs that match your skills.</p>
+          </div>
+          <div class="search-area">
+            <input id="jobSearchInput" type="search" placeholder="Search jobs by title or skill" />
+            <select id="jobTypeFilter">
+              <option value="all">All categories</option>
+              <option value="design">Design</option>
+              <option value="development">Development</option>
+              <option value="marketing">Marketing</option>
+            </select>
+          </div>
+        </div>
+        <div class="jobs-grid" id="jobsGrid"></div>
+      </section>
+      <section class="content-section role-client" id="postJobSection">
+        <div class="section-header">
+          <div>
+            <h2>Post a job</h2>
+            <p>Create a new opportunity for freelancers.</p>
+          </div>
+        </div>
+        <div class="card post-job-card">
+          <form id="postJobForm" class="job-form">
+            <div class="form-row">
+              <input id="jobTitle" type="text" placeholder="Job title" required />
+              <input id="jobBudget" type="text" placeholder="Budget (TZS)" required />
+            </div>
+            <div class="form-row">
+              <select id="jobCategory" aria-label="Category">
+                <option value="design">Design</option>
+                <option value="development" selected>Development</option>
+                <option value="marketing">Marketing</option>
+              </select>
+            </div>
+            <textarea id="jobDescription" placeholder="Describe your project" required></textarea>
+            <button class="btn btn-primary" type="submit">Post Job</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/jobs.js"></script>
+</body>
+</html>

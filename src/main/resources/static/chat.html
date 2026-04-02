@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat | Freelance Application Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/chat.css" />
+</head>
+<body>
+  <div class="dashboard-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-sidebar">
+        <div class="brand-mark small">F</div>
+        <div>
+          <h2>Freelance App</h2>
+          <p>Work, manage, connect.</p>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="jobs.html" class="nav-link">Jobs</a>
+        <a href="applications.html" class="nav-link">Applications</a>
+        <a href="chat.html" class="nav-link active">Chat</a>
+        <a href="notifications.html" class="nav-link">Notifications</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="admin.html" class="nav-link role-admin">Admin Panel</a>
+      </nav>
+    </aside>
+    <div class="main-content">
+      <header class="topbar">
+        <button class="icon-btn sidebar-toggle" id="sidebarToggle">☰</button>
+        <div class="topbar-title"><h1>Chat</h1></div>
+        <div class="topbar-actions">
+          <div class="user-chip" id="userChip"></div>
+          <button class="btn btn-secondary" id="logoutButton">Logout</button>
+        </div>
+      </header>
+      <section class="content-section chat-shell">
+        <aside class="chat-list card">
+          <div class="chat-list-header">
+            <h2>Conversations</h2>
+          </div>
+          <div id="conversationList"></div>
+        </aside>
+        <div class="chat-window card">
+          <div class="chat-header">
+            <div>
+              <h2 id="activeConversationTitle">Select a conversation</h2>
+              <p id="activeConversationStatus">Stay connected with your clients and freelancers.</p>
+            </div>
+          </div>
+          <div class="messages-panel" id="messagePanel"></div>
+          <form class="chat-input-form" id="chatForm">
+            <input id="chatMessageInput" type="text" placeholder="Type your message..." autocomplete="off" />
+            <button class="btn btn-primary" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
