@@ -79,4 +79,44 @@ public class AdminService {
         d.setUpdatedAt(job.getUpdatedAt());
         return d;
     }
+
+	public Object getAllUsers(String role, Boolean active) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object updateUserStatus(Long userId, boolean active) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object changeUserRole(Long userId, String newRole) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void deleteUser(Long userId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteJob(Long jobId) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Object getAllMessages(Long userId, int page, int size) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object resolveDispute(Long jobId, String resolution) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getSystemReport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -193,4 +193,14 @@ public class UserService {
 
         return dto;
     }
+
+	public List<UserResponseDto> searchUsers(String query) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getUserInfo(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

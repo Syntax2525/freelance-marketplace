@@ -20,6 +20,10 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
 
+    /**
+     * Create a review (CLIENT reviews FREELANCER or FREELANCER reviews CLIENT after job completion)
+     * Authenticated users only - role validation in service layer
+     */
     @PostMapping
     @PreAuthorize("isAuthenticated()")
     public ResponseEntity<ReviewResponseDto> createReview(@RequestBody ReviewCreateDto dto) {
@@ -27,9 +31,31 @@ public class ReviewController {
         return new ResponseEntity<>(review, HttpStatus.CREATED);
     }
 
+    /**
+     * Get reviews for a user (publicly accessible)
+     */
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<ReviewResponseDto>> getReviewsForUser(@PathVariable Long userId) {
         List<ReviewResponseDto> reviews = reviewService.getReviewsForUser(userId);
         return ResponseEntity.ok(reviews);
+    }
+
+    /**
+     * Get reviews written by a user
+     */
+    @GetMapping("/written-by/{userId}")
+    public ResponseEntity<List<ReviewResponseDto>> getReviewsWrittenByUser(@PathVariable Long userId) {
+        List<ReviewResponseDto> reviews = reviewService.getReviewsWrittenByUser(userId);
+        return ResponseEntity.ok(reviews);
+    }
+
+    /**
+     * Delete a review (REVIEWER who wrote it, ADMIN access)
+     */
+    @DeleteMapping("/{reviewId}")
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<Void> deleteReview(@PathVariable Long reviewId) {
+        reviewService.deleteReview(reviewId);
+        return ResponseEntity.noContent().build();
     }
 }

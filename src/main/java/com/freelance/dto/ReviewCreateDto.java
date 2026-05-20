@@ -44,4 +44,14 @@ public class ReviewCreateDto {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+	public Long getApplicationId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Object getReviewedUserId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

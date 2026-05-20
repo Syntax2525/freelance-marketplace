@@ -51,6 +51,14 @@ public class JwtUtil {
 
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();
+        
+        // Extract role from authorities
+        String role = userDetails.getAuthorities().stream()
+                .map(auth -> auth.getAuthority())
+                .findFirst()
+                .orElse("ROLE_USER");
+        
+        claims.put("role", role);
         return createToken(claims, userDetails.getUsername());
     }
 
@@ -62,6 +70,17 @@ public class JwtUtil {
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_EXPIRATION_MS))
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
+    }
+
+    /**
+     * Extract role from JWT token.
+     * @param token the JWT token
+     * @return the role claim value
+     */
+    public String extractRole(String token) {
+        Claims claims = extractAllClaims(token);
+        Object role = claims.get("role");
+        return role != null ? role.toString() : "ROLE_USER";
     }
 
     public Boolean validateToken(String token, UserDetails userDetails) {

@@ -15,6 +15,8 @@ public interface JobRepository extends JpaRepository<Job, Long> {
 
     Page<Job> findByStatus(JobStatus status, Pageable pageable);
 
+    Page<Job> findByCategory(String category, Pageable pageable);
+
     // Common search/filter patterns (you can extend later)
     // Page<Job> findByCategoryAndStatusAndBudgetTzsBetween(
     //         String category, JobStatus status, BigDecimal minBudget, BigDecimal maxBudget, Pageable pageable);

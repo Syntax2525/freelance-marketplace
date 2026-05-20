@@ -13,6 +13,8 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     List<Review> findByReviewedUserId(Long reviewedUserId);
 
+    List<Review> findByReviewerId(Long reviewerId);
+
     Optional<Review> findByJobIdAndReviewerId(Long jobId, Long reviewerId);
 
     // For calculating average rating later in service layer
